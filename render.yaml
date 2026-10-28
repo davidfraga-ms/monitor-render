@@ -1,24 +1,8 @@
 services:
-  # 1. Blackbox Exporter (Privado)
-  - type: pserv
-    name: blackbox-exporter
-    env: docker
-    dockerfilePath: Dockerfile.blackbox
-    plan: free
-
-  # 2. Prometheus (Privado)
-  - type: pserv
-    name: prometheus
-    env: docker
-    dockerfilePath: Dockerfile.prometheus
-    plan: free
-
-  # 3. Grafana (Público)
   - type: web
-    name: grafana-externo
-    env: image
-    image:
-      url: grafana/grafana:latest
+    name: monitor-horus-stack
+    env: docker
+    dockerfilePath: Dockerfile
     plan: free
     envVars:
       - key: PORT
