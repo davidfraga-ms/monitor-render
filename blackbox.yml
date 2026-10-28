@@ -1,0 +1,8 @@
+modules:
+  http_horus_module:
+    prober: http
+    timeout: 30s
+    http:
+      valid_status_codes: [302, 200]
+      no_follow_redirects: true
+      fail_if_not_ssl: true
